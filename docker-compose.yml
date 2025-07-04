@@ -48,7 +48,7 @@ services:
       - path: docker/.env-local # optional override
         required: false
     image: nginx:latest
-    container_name: superset_nginx
+    container_name: w_superset_nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -60,7 +60,7 @@ services:
 
   redis:
     image: redis:7
-    container_name: superset_cache
+    container_name: w_superset_cache
     restart: unless-stopped
     ports:
       - "127.0.0.1:6379:6379"
@@ -74,7 +74,7 @@ services:
       - path: docker/.env-local # optional override
         required: false
     image: postgres:16
-    container_name: superset_db
+    container_name: w_superset_db
     restart: unless-stopped
     ports:
       - "127.0.0.1:5432:5432"
@@ -90,7 +90,7 @@ services:
         required: false
     build:
       <<: *common-build
-    container_name: superset_app
+    container_name: w_superset_app
     command: ["/app/docker/docker-bootstrap.sh", "app"]
     restart: unless-stopped
     ports:
@@ -106,7 +106,7 @@ services:
     volumes: *superset-volumes
 
   superset-websocket:
-    container_name: superset_websocket
+    container_name: w_superset_websocket
     build: ./superset-websocket
     ports:
       - 8080:8080
@@ -141,7 +141,7 @@ services:
   superset-init:
     build:
       <<: *common-build
-    container_name: superset_init
+    container_name: w_superset_init
     command: ["/app/docker/docker-init.sh"]
     env_file:
       - path: docker/.env # default
@@ -178,7 +178,7 @@ services:
       superset: "http://superset:8088"
     ports:
       - "127.0.0.1:9000:9000"  # exposing the dynamic webpack dev server
-    container_name: superset_node
+    container_name: w_superset_node
     command: ["/app/docker/docker-frontend.sh"]
     env_file:
       - path: docker/.env # default
@@ -190,7 +190,7 @@ services:
   superset-worker:
     build:
       <<: *common-build
-    container_name: superset_worker
+    container_name: w_superset_worker
     command: ["/app/docker/docker-bootstrap.sh", "worker"]
     env_file:
       - path: docker/.env # default
@@ -216,7 +216,7 @@ services:
   superset-worker-beat:
     build:
       <<: *common-build
-    container_name: superset_worker_beat
+    container_name: w_superset_worker_beat
     command: ["/app/docker/docker-bootstrap.sh", "beat"]
     env_file:
       - path: docker/.env # default
@@ -234,7 +234,7 @@ services:
   superset-tests-worker:
     build:
       <<: *common-build
-    container_name: superset_tests_worker
+    container_name: w_superset_tests_worker
     command: ["/app/docker/docker-bootstrap.sh", "worker"]
     env_file:
       - path: docker/.env # default

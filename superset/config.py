@@ -381,22 +381,22 @@ BABEL_DEFAULT_FOLDER = "superset/translations"
 # The allowed translation for your app
 LANGUAGES = {
     "en": {"flag": "us", "name": "English"},
-    "es": {"flag": "es", "name": "Spanish"},
-    "it": {"flag": "it", "name": "Italian"},
-    "fr": {"flag": "fr", "name": "French"},
-    "zh": {"flag": "cn", "name": "Chinese"},
-    "zh_TW": {"flag": "tw", "name": "Traditional Chinese"},
-    "ja": {"flag": "jp", "name": "Japanese"},
-    "de": {"flag": "de", "name": "German"},
-    "pl": {"flag": "pl", "name": "Polish"},
-    "pt": {"flag": "pt", "name": "Portuguese"},
-    "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
-    "ru": {"flag": "ru", "name": "Russian"},
-    "ko": {"flag": "kr", "name": "Korean"},
-    "sk": {"flag": "sk", "name": "Slovak"},
-    "sl": {"flag": "si", "name": "Slovenian"},
-    "nl": {"flag": "nl", "name": "Dutch"},
-    "uk": {"flag": "uk", "name": "Ukranian"},
+    # "es": {"flag": "es", "name": "Spanish"},
+    # "it": {"flag": "it", "name": "Italian"},
+    # "fr": {"flag": "fr", "name": "French"},
+    # "zh": {"flag": "cn", "name": "Chinese"},
+    # "zh_TW": {"flag": "tw", "name": "Traditional Chinese"},
+    # "ja": {"flag": "jp", "name": "Japanese"},
+    # "de": {"flag": "de", "name": "German"},
+    # "pl": {"flag": "pl", "name": "Polish"},
+    # "pt": {"flag": "pt", "name": "Portuguese"},
+    # "pt_BR": {"flag": "br", "name": "Brazilian Portuguese"},
+    # "ru": {"flag": "ru", "name": "Russian"},
+    # "ko": {"flag": "kr", "name": "Korean"},
+    # "sk": {"flag": "sk", "name": "Slovak"},
+    # "sl": {"flag": "si", "name": "Slovenian"},
+    # "nl": {"flag": "nl", "name": "Dutch"},
+    # "uk": {"flag": "uk", "name": "Ukranian"},
 }
 # Turning off i18n by default as translation in most languages are
 # incomplete and not well maintained.
@@ -567,7 +567,7 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     # Adds a switch to the navbar to easily switch between light and dark themes.
     # This is intended to use for development, visual review, and theming-debugging
     # purposes.
-    "THEME_ENABLE_DARK_THEME_SWITCH": False,
+    "THEME_ENABLE_DARK_THEME_SWITCH": True,
     # Adds a theme editor as a modal dialog in the navbar. Allows people to type in JSON
     # and see the changes applied to the current theme.
     # This is intended to use for theme creation, visual review and theming-debugging
